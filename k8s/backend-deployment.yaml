@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photojugaad-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: photojugaad-backend
+  template:
+    metadata:
+      labels:
+        app: photojugaad-backend
+    spec:
+      containers:
+        - name: backend
+          image: photojugaad-backend:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: photojugaad-secret
+            - configMapRef:
+                name: photojugaad-backend-config

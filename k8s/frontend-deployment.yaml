@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photojugaad-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: photojugaad-frontend
+  template:
+    metadata:
+      labels:
+        app: photojugaad-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: photojugaad-frontend:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+

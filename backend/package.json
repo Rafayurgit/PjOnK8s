@@ -1,0 +1,44 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "file-type": "^21.0.0",
+    "google-auth-library": "^10.4.0",
+    "heic-convert": "^2.1.0",
+    "icojs": "^0.19.5",
+    "ioredis": "^5.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "mime-types": "^3.0.1",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.3",
+    "multer": "^2.0.1",
+    "nodemailer": "^7.0.9",
+    "puppeteer": "^24.20.0",
+    "redis": "^5.7.0",
+    "resend": "^6.5.0",
+    "sharp": "^0.34.3",
+    "sib-api-v3-sdk": "^8.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
