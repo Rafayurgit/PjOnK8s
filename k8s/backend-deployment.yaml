@@ -20,6 +20,6 @@ spec:
             - containerPort: 8080
           envFrom:
             - secretRef:
-                name: photojugaad-secret
+                name: photojugaad-backend-secret
             - configMapRef:
                 name: photojugaad-backend-config
