@@ -9,7 +9,7 @@ export async function uploadAndConvert(files, targetFormat, onProgress) {
   }
   formData.append("Format", targetFormat);
 
-  const response = await axios.post("http://localhost:8080/upload", formData, {
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData, {
     headers: { "Content-Type": "multipart/form-data" },
     responseType: "json",
     timeout: 120000,
