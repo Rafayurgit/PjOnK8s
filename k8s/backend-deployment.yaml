@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: photojugaad-backend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: photojugaad-backend
@@ -23,3 +23,22 @@ spec:
                 name: photojugaad-backend-secret
             - configMapRef:
                 name: photojugaad-backend-config
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
