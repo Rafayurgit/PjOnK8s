@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: photojugaad-backend-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: photojugaad-backend
   ports:
